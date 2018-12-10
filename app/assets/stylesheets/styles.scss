@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import 'animations.scss';
+
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+html{
+  width: 100%;
+  height: 100%;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+body{
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.hidden{
+  display: none !important;
+  outline: none !important;
+}
+
+.invalid{
+  opacity: 0;
+  outline: none !important;
+  // filter: alpha(opacity=90);
+}
+
+#resume{
+  width: 75%;
+  height: auto;
+  border: 1px solid black;
+}
+
+header{
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+
+  .navbar_button{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    background-size: 40px;
+    background-position: center;
+  }
+
+  #hamburgerbutton{
+    background: url("/icons/hamburger.svg") no-repeat;
+    display: none;
+  }
+
+  .navbar{
+    width: 100%;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+
+    #closeNavbarButton{
+      background: url("/icons/exit.svg") no-repeat;
+      display: none;
+    }
+
+    .navbar_navs{
+      width: 90%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+
+      #navbar-brand{
+        font-size: 2rem;
+        padding: 0.5rem;
+      }
+
+      .navbar_navs--textlink{
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 0.5rem;
+        color: black;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.main{
+  margin: 5em 3em;
+}
+
+.main_Info{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  img{
+    width: 100%;
+    height: auto;
+  }
+
+  .main_Info--paragraphText{
+    padding-bottom: 2rem;
+  }
+
+  .main_Info_video{
+    border: 2px green solid;
+    padding: .5em 1em;
+    width: 90%;
+
+    video{
+      width: 100%;
+    }
+
+    #controls{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .main_Info_video_Button{
+      border: 0px;
+      padding: .25em 1em;
+      color: transparent;
+      width: 15%;
+      box-sizing: border-box;
+      }
+
+      button[title="play"]{
+        background: url("/icons/play.svg") no-repeat;
+        background-size: 10px;
+        background-position: center;
+      }
+
+      button[title="pause"]{
+        background: url("/icons/pause.svg") no-repeat;
+        background-size: 10px;
+        background-position: center;
+      }
+
+      progress{
+        width: 65%;
+      }
+      progress[value]{
+        -webkit-appearance: none;
+
+        &::-webkit-progress-bar{
+          background-color: black;
+          border-radius: 2px;
+        }
+
+        &::-webkit-progress-value {
+          background-image:
+        	   -webkit-linear-gradient(top,
+        	                           rgba(255, 255, 255, .25),
+        	                           rgba(0, 0, 0, .25)),
+        	   -webkit-linear-gradient(left, #006400, #32CD32);
+
+            border-radius: 2px;
+            background-size: 35px 20px, 100% 100%, 100% 100%;
+        }
+      }
+
+      .main_Info_video_volumeControls{
+        padding-left: 1em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        #muteButton{
+          padding: 0px .25em;
+        }
+        input[type="range"]{
+          -webkit-appearance: none;
+          width: 75%;
+          &::-webkit-slider-thumb{
+            -webkit-appearance: none;
+            cursor: pointer;
+            // border: 1px solid #000000;
+            height: 20px;
+            width: 20px;
+            border-radius: 20px;
+            color: green;
+            background: green;
+            margin-top: -8.5px;
+          }
+          &::-webkit-slider-runnable-track {
+            cursor: pointer;
+            width: 100%;
+            height: 5px;
+            background: white;
+            border-radius: 2px;
+            border: 1px solid black;
+          }
+        }
+
+        button[title="mute"]{
+          background: url("/icons/unmuted.svg") no-repeat;
+          background-size: 20px;
+          background-position: center;
+        }
+
+        button[title="unmute"]{
+          background: url("/icons/muted.svg") no-repeat;
+          background-size: 20px;
+          background-position: center;
+        }
+      }
+
+    }
+  }
+
+}
+
+.main_display{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .main_display_projectBox{
+    display: block;
+    border-radius: 5px;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem 1rem;
+    margin: 2rem 1rem;
+    margin-top: 0px;
+
+    &:hover{
+      background-color: #eeeeee;
+      cursor: pointer;
+    }
+  }
+
+  .main_display_csproject{
+    background-color: rgba(50,205,50, 0.4);
+    &:hover{
+      background-color: rgba(50,205,50, 0.7);
+    }
+  }
+}
+
+.cstheme{
+  background-color: black;
+}
+
+.main_display--projectImage{
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+}
+
+.main_display--projectTitle{
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.main_display--projectDescription{
+  text-align: center;
+  font-size: .75em;
+  padding: 1em 0em;
+}
+
+.main_display--projectRole{
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.fullheight{
+  height: 100%;
+}
+
+.full-main{
+  height: 100%;
+}
+
+.main_carousel{
+  width: 90%;
+  height: 100%;
+  margin-bottom: 0px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .main_carousel--button{
+    background-color: transparent;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    position: absolute;
+  }
+
+  $button-direction-padding: 30px;
+  $button-perpendicular-padding: 20px;
+
+  .main_carousel--button_project{
+    padding: $button-direction-padding $button-perpendicular-padding;
+  }
+
+  #leftarrow{
+    background: url("/icons/left_arrow.svg") no-repeat;
+    background-size: 10px;
+    background-position: center;
+    left: 50px;
+  }
+
+  #rightarrow{
+    background: url("/icons/right_arrow.svg") no-repeat;
+    background-size: 10px;
+    background-position: center;
+    right: 50px;
+  }
+
+  .main_carousel--button_progression{
+    padding: $button-perpendicular-padding $button-direction-padding;
+  }
+  #uparrow{
+    background: url("/icons/up_arrow.svg") no-repeat;
+    background-size: 20px;
+    background-position: center;
+    top: 75px;
+  }
+  #downarrow{
+    background: url("/icons/down_arrow.svg") no-repeat;
+    background-size: 20px;
+    background-position: center;
+    bottom: 10px;
+  }
+
+  .main_carousel--content{
+    width: 75%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img{
+      height: 50%;
+    }
+    p{
+      font-size: 1.25em;
+      text-align: center;
+      padding: 1em;
+    }
+  }
+}
+
+@import 'mobile.scss';

@@ -1,0 +1,60 @@
+<% provide(:title, '- CPACS') %>
+<body>
+  <%= render 'layouts/navbar' %>
+  <main class="main main_Info">
+
+    <img src="../ux/CPACS/Logo.png" alt="CPACSLogo"></img>
+    <h1>Legacy System Redesign (In progress)</h1>
+    <p class="main_Info--paragraphText">
+      As part of NYU IT OTSS, one of my projects is to redesign the legacy enterprise system, CPACS, used to manage construction projects. The system is heavily document workflow based. Whenever a new employee is hired, they must go through several hours of training in order to learn how to use the software.
+    </p>
+    <p class="main_Info--paragraphText">
+      The CPACS redesign involves converting a non-scalable desktop application to an accessible web browser application that can later be expanded to encompass other fields of professional work as well.
+    </p>
+
+      <h2>Issues with old CPACS</h2>
+      <ul>
+        <li>Not scalable</li>
+        <li>Outdated layout for information</li>
+        <li>Information dense, hard to look at</li>
+        <li>Not accessible</li>
+      </ul>
+      <br/>
+      <br/>
+      <h2>Challenge</h2>
+      <p class="main_Info--paragraphText">
+        Redesign a legacy system so that it is easier to use but still familiar to old users.
+      </p>
+
+    <h2>Application Navigation</h2>
+    <p class="main_Info--paragraphText">
+      The user would typically navigate through CPACS exclusively with a sidebar. <i>Everything</i> is found in the sidebar, which means it is a scroll intensive endeavor to find anything in the hierarchy of folders.
+    </p>
+    <img src="../ux/CPACS/old_navigation.jpg" alt="old CPACS navigation"></img>
+    <p class="main_Info--paragraphText">
+      We decided to retain some aspects of of the old CPACS by keeping primary navigation through the sidebar.
+    </p>
+    <p class="main_Info--paragraphText">
+      Inspired by Apple’s visual display of information architecture in the Settings app for the iPhone, we utilized cards to display the names of each document type a project would have.
+      Hierarchies no longer all exist exclusively in the sidebar, making the sidebar experience more clean and less scroll intensive.
+    </p>
+    <img src="../ux/CPACS/new_navigation.png" alt="new CPACS navigation"></img>
+    <br/>
+    <br/>
+    <img src="../ux/CPACS/new_page_look.png" alt="new CPACS navigation"></img>
+    <p class="main_Info--paragraphText">
+      Pages utilize a lot more empty space and a vertical grouping of information header and actual information so that the users are able to easily and quickly find information.
+    </p>
+
+    <h2>Process</h2>
+    <p class="main_Info--paragraphText">
+      CPACSweb is currently still in the works. Every few weeks, we sign off on a part of the project that we will implement into the old system. After a part has been implemented, we do user testing and collect user feedback in order to improve our designs for the next iteration.
+      <br/>
+      <br/>
+      The plan is to replace the old CPACS with CPACSweb part by part until eventually, the whole system has been redesigned.
+    </p>
+
+  </main>
+  
+  <%= javascript_include_tag 'nav', 'data-turbolinks-track': 'reload' %>
+</body>

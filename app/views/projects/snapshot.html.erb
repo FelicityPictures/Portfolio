@@ -1,0 +1,26 @@
+<% provide(:title, '- Snapshot') %>
+<body>
+  <%= render 'layouts/navbar' %>
+  <main class="main main_Info">
+    <div class='main_Info_video'>
+      <video id="snapshotvideo" src="../snapshot.mp4"></video>
+      <div id="controls">
+        <button id='playPauseButton' class='main_Info_video_Button' title='play' accesskey="P">Play</button>
+      	<progress id='progressBar' min='0' max='100' value='0'>0% played</progress>
+
+        <div class="main_Info_video_volumeControls">
+        	<button id='muteButton' class='main_Info_video_Button' title='mute'>Mute</button>
+          <input type="range" id="volume" title="volume" min="0" max="1" step="0.1" value="1">
+        </div>
+      </div>
+    </div>
+
+    <h1>Snapshot</h1>
+    <p>Github repo </p>
+    <a href="https://github.com/omgimanerd/softdev/tree/master/snapshot">Here</a>
+
+  </main>
+
+  <%= javascript_include_tag 'nav', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'snapshot', 'data-turbolinks-track': 'reload' %>
+</body>

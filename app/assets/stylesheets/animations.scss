@@ -1,0 +1,56 @@
+$animation-margin: 600px;
+$swipe-duration: .5s;
+
+.from-right{
+  animation: $swipe-duration comefromright linear forwards 1;
+}
+
+@keyframes comefromright{
+  0%{margin-left: $animation-margin; opacity: 0;}
+  100%{margin-left: 0px; opacity: 1;}
+}
+
+.from-left{
+   animation: $swipe-duration comefromleft linear forwards 1;
+}
+
+@keyframes comefromleft{
+  0%{margin-right: $animation-margin; opacity: 0;}
+  100%{margin-right: 0px; opacity: 1;}
+}
+
+.from-bottom{
+  animation: $swipe-duration comefrombottom linear forwards 1;
+}
+
+@keyframes comefrombottom{
+  0%{margin-top: $animation-margin; opacity: 0;}
+  100%{margin-top: 0px; opacity: 1;}
+}
+
+.from-top{
+   animation: $swipe-duration comefromtop linear forwards 1;
+}
+
+@keyframes comefromtop{
+  0%{margin-bottom: $animation-margin; opacity: 0;}
+  100%{margin-bottom: 0px; opacity: 1;}
+}
+
+.appear-from-top{
+  animation: $swipe-duration show linear forwards 1;
+}
+
+@keyframes show{
+  0%{top: -500px; opacity: 0;}
+  100%{top: 0px; opacity: 1;}
+}
+
+.disappear-to-top{
+  animation: $swipe-duration disappear linear forwards 1;
+}
+
+@keyframes disappear{
+  0%{top: 0; opacity: 1;}
+  100%{top: -500px; opacity: 0;}
+}

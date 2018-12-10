@@ -1,0 +1,13 @@
+<% provide(:title, '- Graphic Design portfolio') %>
+<body class="fullheight">
+  <%= render 'layouts/navbar' %>
+  <main id="main" class="main main_carousel">
+    <button id="leftarrow" class="main_carousel--button main_carousel--button_project"></button>
+    <button id="uparrow" class="main_carousel--button main_carousel--button_progression"></button>
+    <button id="rightarrow" class="main_carousel--button main_carousel--button_project"></button>
+    <button id="downarrow" class="main_carousel--button main_carousel--button_progression"></button>
+
+  </main>
+  <%= javascript_include_tag 'nav', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'graphicdesign', 'data-turbolinks-track': 'reload' %>
+</body>
