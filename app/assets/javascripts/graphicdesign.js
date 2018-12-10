@@ -7,7 +7,7 @@ const scribble = [
   ["graphic_design/Scribble/iteration1.png", "First attempt at logo", "First attempt at logo"],
   ["graphic_design/Scribble/iteration2.svg", "Second attempt at logo", "Second attempt at logo"],
   ["graphic_design/Scribble/poster.png", "Advertising poster", "Advertising poster"],
-  ["graphic_design/Scribble/merch.jpg", "Branded merchandise", "Branded merchandise"],
+  ["graphic_design/Scribble/merch.jpg", "Branded merchandise", "Branded merchandise"]
 ]
 
 const sous = [
@@ -16,7 +16,7 @@ const sous = [
   ["graphic_design/Sous/second_iteration.svg", "Second attempt", "second attempt at logo"],
   ["graphic_design/Sous/third_iteration.svg", "Iteration on second attempt", "iteration on attempts"],
   ["graphic_design/Sous/fourth_iteration.svg", "Another iteration", "another iteration"],
-  ["graphic_design/Sous/Logo.svg", "Final Logo", "final logo for Sous"],
+  ["graphic_design/Sous/Logo.svg", "Final Logo", "final logo for Sous"]
 ]
 
 const projects = [
