@@ -53,3 +53,26 @@ html{
 
   }
 }
+
+@media only screen
+  and (device-width : 375px)
+  and (device-height : 812px)
+  and (-webkit-device-pixel-ratio : 3)
+  and (orientation : portrait),
+only screen
+  and (min-device-width : 375px)
+  and (max-device-width : 667px)
+  and (orientation : portrait),
+only screen
+  and (min-device-width : 414px)
+  and (max-device-width : 736px)
+  and (orientation : portrait) {
+
+  .landing .landing_brand{
+    font-size: 3em;
+  }
+
+  .landing .landing_nav .landing_nav_navs--textlink{
+    font-size: 1.25em;
+  }
+}

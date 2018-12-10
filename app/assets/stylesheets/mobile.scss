@@ -1,8 +1,16 @@
 @media only screen
-    and (device-width : 375px)
-    and (device-height : 812px)
-    and (-webkit-device-pixel-ratio : 3)
-    and (orientation : portrait) {
+  and (device-width : 375px)
+  and (device-height : 812px)
+  and (-webkit-device-pixel-ratio : 3)
+  and (orientation : portrait),
+only screen
+  and (min-device-width : 375px)
+  and (max-device-width : 667px)
+  and (orientation : portrait),
+only screen
+  and (min-device-width : 414px)
+  and (max-device-width : 736px)
+  and (orientation : portrait) {
 
   header{
     position: fixed;
@@ -13,6 +21,7 @@
     z-index: 1;
 
     #hamburgerbutton{
+      background-color: white;
       display: block;
     }
 

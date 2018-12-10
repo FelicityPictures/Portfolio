@@ -52,6 +52,7 @@ function createContent(x, y){
   contentP.textContent = comment;
   contentDiv.appendChild(contentP);
 
+  contentDiv.style.touchAction = "none";
   return contentDiv;
 }
 
@@ -59,17 +60,13 @@ let main = document.querySelector("#main");
 
 function appendNewContent(x,y,animationClass){
   let content = createContent(x,y);
-  content.classList.add(animationClass);
   main.removeChild(main.lastChild);
   main.appendChild(content);
   validateArrows();
+  content.classList.add(animationClass);
   content.addEventListener('pointerdown', startSwipe);
   content.addEventListener('pointermove', swiping);
   content.addEventListener('pointerup', stopSwipe);
-
-  content.addEventListener('touchstart', startSwipe);
-  content.addEventListener('touchmove', swiping);
-  content.addEventListener('touchend', stopSwipe);
 }
 
 function leftArrowClicked(){
@@ -159,12 +156,6 @@ window.addEventListener('load', () => {
   content.addEventListener('pointerdown', startSwipe);
   content.addEventListener('pointermove', swiping);
   content.addEventListener('pointerup', stopSwipe);
-
-  // document.body.addEventListener('touchstart', function(){
-  //   console.log("touch start");
-  // }, false);
-  // content.addEventListener('touchmove', swiping);
-  // content.addEventListener('touchend', stopSwipe);
 
   // Add on screen button event listeners
   document.querySelector("#leftarrow").addEventListener('click', leftArrowClicked);
