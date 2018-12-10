@@ -1,6 +1,9 @@
 let currentProject = 0;
 let currentProgression = 0;
 
+console.log(screen.width);
+console.log(screen.height);
+
 const scribble = [
   // [path, comment. alt]
   ["graphic_design/Scribble/Logo.png", "Design-a-thon", "Design-a-thon"],
