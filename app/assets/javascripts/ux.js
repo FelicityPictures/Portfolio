@@ -1,13 +1,13 @@
 const uxprojects = [
   // [image path, project title, role]
   // ["/user_experience/CPACS", "ux/CPACS/Logo.png", "Enterprise System Redesign", "UI Designer"],
-  // ["/user_experience/CPACS", "graphic_design/Scribble/Logo.png", "Enterprise System Redesign", "UI Designer"],
+  ["/user_experience/CPACS", "graphic_design/Scribble/Logo.png", "Enterprise System Redesign", "UI Designer"],
   // ["/user_experience/CPACS", "ux/CPACS/Logo.png", "Enterprise System Redesign", "UI Designer"],
   // ["/user_experience/CPACS", "ux/CPACS/Logo.png", "Enterprise System Redesign", "UI Designer"],
   ["/user_experience/CPACS", "ux/CPACS/Logo.png", "Enterprise System Redesign", "UI Designer"]
 ]
 
-for(let i = 0; i < 5; i++){
+for(let i = 0; i < uxprojects.length; i++){
   const [path, imagePath, title, role] = uxprojects[i];
 
   let proj = document.createElement("a");
