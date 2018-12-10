@@ -66,6 +66,10 @@ function appendNewContent(x,y,animationClass){
   content.addEventListener('pointerdown', startSwipe);
   content.addEventListener('pointermove', swiping);
   content.addEventListener('pointerup', stopSwipe);
+
+  content.addEventListener('touchstart', startSwipe);
+  content.addEventListener('touchmove', swiping);
+  content.addEventListener('touchend', stopSwipe);
 }
 
 function leftArrowClicked(){
