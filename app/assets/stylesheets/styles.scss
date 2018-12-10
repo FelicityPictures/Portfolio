@@ -96,6 +96,17 @@ header{
         padding: 0.5rem;
         color: black;
         cursor: pointer;
+        border-radius: 3px;
+
+        &:hover, &:focus{
+          background-color: rgba(253, 215, 53, .5);
+        }
+
+        &:nth-child(1){
+          &:hover, &:focus{
+            background-color: white;
+          }
+        }
       }
     }
   }
@@ -250,7 +261,7 @@ header{
     margin: 2rem 1rem;
     margin-top: 0px;
 
-    &:hover{
+    &:hover, &:focus{
       background-color: #eeeeee;
       cursor: pointer;
     }
@@ -258,7 +269,7 @@ header{
 
   .main_display_csproject{
     background-color: rgba(50,205,50, 0.4);
-    &:hover{
+    &:hover, &:focus{
       background-color: rgba(50,205,50, 0.7);
     }
   }
