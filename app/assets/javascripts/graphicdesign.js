@@ -1,9 +1,6 @@
 let currentProject = 0;
 let currentProgression = 0;
 
-console.log(screen.width);
-console.log(screen.height);
-
 const scribble = [
   // [path, comment. alt]
   ["graphic_design/Scribble/Logo.png", "Design-a-thon", "Design-a-thon"],
@@ -72,82 +69,124 @@ function appendNewContent(x,y,animationClass){
   content.addEventListener('pointerup', stopSwipe);
 }
 
-function leftArrowClicked(){
+function leftArrowClicked(animationClass){
   currentProject--;
   currentProgression = 0;
   if(currentProject < 0){
     currentProject = projects.length-1;
   }
-  appendNewContent(currentProject,currentProgression,"from-right");
+  appendNewContent(currentProject,currentProgression, animationClass);
 }
 
-function rightArrowClicked(){
+function rightArrowClicked(animationClass){
   currentProject++;
   currentProgression = 0;
   if(currentProject > projects.length-1){
     currentProject = 0;
   }
-  appendNewContent(currentProject,currentProgression,"from-left");
+  appendNewContent(currentProject,currentProgression, animationClass);
 }
 
-function downArrowClicked(){
+function downArrowClicked(animationClass){
   currentProgression++;
   if(currentProgression < projects[currentProject].length){
-    appendNewContent(currentProject,currentProgression, "from-top");
+    appendNewContent(currentProject,currentProgression, animationClass);
   }else{
     currentProgression = projects[currentProject].length-1;
   }
 }
 
-function upArrowClicked(){
+function upArrowClicked(animationClass){
   currentProgression--;
   if(currentProgression >= 0){
-    appendNewContent(currentProject,currentProgression, "from-bottom");
+    appendNewContent(currentProject,currentProgression, animationClass);
   }else{
     currentProgression = 0;
   }
 }
 
 // ===================SWIPING===================
-
+let screenWidth = screen.width;
+let screenHeight = screen.height;
 let origin = null;
+let direction = null;
 
 function startSwipe(event) {
     event.preventDefault();
     event.stopPropagation();
-    origin = event.clientX;
+
+    let x = event.clientX;
+    let y = event.clientY;
+
+    if((x > 1*screenWidth/3 && x < 2*screenWidth/3) && (y < 3*screenHeight/7 || y > 4*screenHeight/7)){
+      direction = "y";
+      console.log("y");
+    }else if((x < 1*screenWidth/3 || x > 2*screenWidth/3) && (y > 3*screenHeight/7 && y < 4*screenHeight/7)){
+      direction = "x";
+      console.log("x");
+    }
+
+    if(direction == "x"){
+      origin = x;
+    }else{
+      origin = y;
+    }
 
     event.target.setPointerCapture(event.pointerId);
 }
 
 function swiping(event) {
-    if (origin) {
+  if (origin && direction) {
+    const element = event.currentTarget;
+    if(direction == "x"){
       let delta = event.clientX - origin;
-      const element = event.currentTarget;
       element.style.transform = 'translateX(' + delta + 'px)';
+    }else{
+      let delta = event.clientY - origin;
+      element.style.transform = 'translateY(' + delta + 'px)';
     }
+  }
 }
 function stopSwipe(event) {
-    if (!origin) {
-        return;
+  if (!origin || !direction) {
+    return;
+  }
+
+  let delta = null;
+
+  if(direction == "x"){
+    delta = event.clientX - origin;
+  }else{
+    delta = event.clientY - origin;
+  }
+
+  if (Math.abs(delta) < 100) {
+    event.currentTarget.style.transform = '';
+    return;
+  }
+
+  let nextIndex = currentProject;
+  if (delta < 0 && direction == "x") {
+    leftArrowClicked("from-right");
+  } else if (delta > 0 && direction == "x") {
+    rightArrowClicked("from-left");
+  } else if (delta < 0 && direction == "y") {
+    if(currentProgression < projects[currentProject].length-1){
+      downArrowClicked("from-bottom");
+    }else{
+      event.currentTarget.style.transform = 'translateX(0px)';
+      event.currentTarget.style.transform = 'translateY(0px)';
     }
-
-    const currentX = event.clientX;
-
-    const delta = currentX - origin;
-
-    origin = null;
-    if (Math.abs(delta) < 100) {
-        event.currentTarget.style.transform = '';
-        return;
+  } else if (delta > 0 && direction == "y") {
+    if(currentProgression > 0){
+      upArrowClicked("from-top");
+    }else{
+      event.currentTarget.style.transform = 'translateX(0px)';
+      event.currentTarget.style.transform = 'translateY(0px)';
     }
-
-    let nextIndex = currentProject;
-    if (delta < 0) {
-        leftArrowClicked();
-    } else {
-        rightArrowClicked();
-    }
+  }
+  origin = null;
+  direction = null;
 }
 window.addEventListener('load', () => {
   // Load content
@@ -161,22 +200,30 @@ window.addEventListener('load', () => {
   content.addEventListener('pointerup', stopSwipe);
 
   // Add on screen button event listeners
-  document.querySelector("#leftarrow").addEventListener('click', leftArrowClicked);
-  document.querySelector("#rightarrow").addEventListener('click', rightArrowClicked);
-  document.querySelector("#uparrow").addEventListener('click', upArrowClicked);
-  document.querySelector("#downarrow").addEventListener('click', downArrowClicked);
+  document.querySelector("#leftarrow").addEventListener('click', function(){
+    leftArrowClicked("from-right");
+  });
+  document.querySelector("#rightarrow").addEventListener('click', function(){
+    rightArrowClicked("from-left");
+  });
+  document.querySelector("#uparrow").addEventListener('click', function(){
+    upArrowClicked("from-bottom");
+  });
+  document.querySelector("#downarrow").addEventListener('click', function(){
+    downArrowClicked("from-top");
+  });
 
   // Add keyboard button event listeners
   window.onkeyup = function(e) {
     var key = e.keyCode;
     if(key == 37){
-      leftArrowClicked();
+      leftArrowClicked("from-right");
     }else if(key == 38){
-      upArrowClicked();
+      upArrowClicked("from-bottom");
     }else if(key == 39){
-      rightArrowClicked();
+      rightArrowClicked("from-left");
     }else if(key == 40){
-      downArrowClicked();
+      downArrowClicked("from-top");
     }
   }
 
