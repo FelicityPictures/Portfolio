@@ -24,7 +24,7 @@ function changeNavImage(e){
   image.src = navImages[e.target.textContent];
   navDiv.appendChild(image);
   e.target.addEventListener('mouseleave',removeNavImage);
-  // e.target.addEventListener('focusout',removeNavImage);
+  e.target.addEventListener('focusout',removeNavImage);
 }
 
 function redirect(e){
@@ -35,6 +35,6 @@ window.addEventListener('load', () => {
   for(let i=0; i<5; i++){
     let nav = document.querySelector('#nav'+i);
     nav.addEventListener('mouseover',changeNavImage);
-    // nav.addEventListener('focus',changeNavImage);
+    nav.addEventListener('focus',changeNavImage);
   }
 });
