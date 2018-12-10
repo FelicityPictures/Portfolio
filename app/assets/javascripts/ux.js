@@ -1,7 +1,7 @@
 const uxprojects = [
   // [image path, project title, role]
   // ["/user_experience/CPACS", "ux/CPACS/Logo.png", "Enterprise System Redesign", "UI Designer"],
-  ["/user_experience/CPACS", "graphic_design/Scribble/Logo.png", "Enterprise System Redesign", "UI Designer"],
+  // ["/user_experience/CPACS", "graphic_design/Scribble/Logo.png", "Enterprise System Redesign", "UI Designer"],
   // ["/user_experience/CPACS", "ux/CPACS/Logo.png", "Enterprise System Redesign", "UI Designer"],
   // ["/user_experience/CPACS", "ux/CPACS/Logo.png", "Enterprise System Redesign", "UI Designer"],
   ["/user_experience/CPACS", "ux/CPACS/Logo.png", "Enterprise System Redesign", "UI Designer"]
