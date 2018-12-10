@@ -6,8 +6,8 @@ const scribble = [
   ["graphic_design/Scribble/Logo.png", "Design-a-thon", "Design-a-thon"],
   ["graphic_design/Scribble/iteration1.png", "First attempt at logo", "First attempt at logo"],
   ["graphic_design/Scribble/iteration2.svg", "Second attempt at logo", "Second attempt at logo"],
-  ["graphic_design/Scribble/poster.png", "Advertising poster", "Advertising poster"],
-  ["graphic_design/Scribble/merch.jpg", "Branded merchandise", "Branded merchandise"]
+  ["graphic_design/Scribble/poster.png", "Advertising poster", "Advertising poster"]
+  // ["graphic_design/Scribble/merch.jpg", "Branded merchandise", "Branded merchandise"]
 ]
 
 const sous = [
@@ -110,33 +110,33 @@ function upArrowClicked(){
 
 // ===================SWIPING===================
 
-let originX = null;
+let origin = null;
 
 function startSwipe(event) {
     event.preventDefault();
     event.stopPropagation();
-    originX = event.clientX;
+    origin = event.clientX;
 
     event.target.setPointerCapture(event.pointerId);
 }
 
 function swiping(event) {
-    if (originX) {
-      let delta = event.clientX - originX;
+    if (origin) {
+      let delta = event.clientX - origin;
       const element = event.currentTarget;
       element.style.transform = 'translateX(' + delta + 'px)';
     }
 }
 function stopSwipe(event) {
-    if (!originX) {
+    if (!origin) {
         return;
     }
 
     const currentX = event.clientX;
 
-    const delta = currentX - originX;
+    const delta = currentX - origin;
 
-    originX = null;
+    origin = null;
     if (Math.abs(delta) < 100) {
         event.currentTarget.style.transform = '';
         return;
@@ -159,6 +159,12 @@ window.addEventListener('load', () => {
   content.addEventListener('pointerdown', startSwipe);
   content.addEventListener('pointermove', swiping);
   content.addEventListener('pointerup', stopSwipe);
+
+  // document.body.addEventListener('touchstart', function(){
+  //   console.log("touch start");
+  // }, false);
+  // content.addEventListener('touchmove', swiping);
+  // content.addEventListener('touchend', stopSwipe);
 
   // Add on screen button event listeners
   document.querySelector("#leftarrow").addEventListener('click', leftArrowClicked);

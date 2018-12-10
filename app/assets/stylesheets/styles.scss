@@ -128,12 +128,21 @@ header{
     height: auto;
   }
 
+  .main_Info_h1{
+    margin: .75em;
+  }
+
   .main_Info--paragraphText{
     padding-bottom: 2rem;
   }
 
+  .main_Info--link{
+    color: #f57f17;
+    text-decoration: underline;
+  }
+
   .main_Info_video{
-    border: 2px green solid;
+    border: 2px #f57f17 solid;
     padding: .5em 1em;
     width: 90%;
 
@@ -174,7 +183,7 @@ header{
         -webkit-appearance: none;
 
         &::-webkit-progress-bar{
-          background-color: black;
+          background-color: #3b4552;
           border-radius: 2px;
         }
 
@@ -183,7 +192,7 @@ header{
         	   -webkit-linear-gradient(top,
         	                           rgba(255, 255, 255, .25),
         	                           rgba(0, 0, 0, .25)),
-        	   -webkit-linear-gradient(left, #006400, #32CD32);
+        	   -webkit-linear-gradient(left, #f57f17, #fdd835);
 
             border-radius: 2px;
             background-size: 35px 20px, 100% 100%, 100% 100%;
@@ -205,12 +214,11 @@ header{
           &::-webkit-slider-thumb{
             -webkit-appearance: none;
             cursor: pointer;
-            // border: 1px solid #000000;
             height: 20px;
             width: 20px;
             border-radius: 20px;
-            color: green;
-            background: green;
+            color: #f57f17;
+            background: #f57f17;
             margin-top: -8.5px;
           }
           &::-webkit-slider-runnable-track {
@@ -219,7 +227,7 @@ header{
             height: 5px;
             background: white;
             border-radius: 2px;
-            border: 1px solid black;
+            border: 1px solid #fdd835;
           }
         }
 
