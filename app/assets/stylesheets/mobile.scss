@@ -10,6 +10,7 @@
     left: 0;
     width: 100%;
     height: 10%;
+    z-index: 1;
 
     #hamburgerbutton{
       display: block;
@@ -20,7 +21,6 @@
       height: 100%;
       display: none;
       position: absolute;
-      z-index: 1;
 
       #closeNavbarButton{
         display: block;
