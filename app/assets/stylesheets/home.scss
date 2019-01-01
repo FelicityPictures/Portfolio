@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Iceberg|Major+Mono+Display|Source+Sans+Pro:300,400,600');
 
 *{
   padding: 0px;
@@ -13,47 +13,128 @@ html{
 .landing{
   width: 100%;
   height: 100%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 
-  #nav-image{
-    width: 100px;
-    height: 100px;
-    img{
-      width: 100%;
-      height: auto;
+  .landing__brandbox{
+    width: 36%;
+    height: 45%;
+    // border: solid 1px black;
+    background-color: rgba(255, 255, 255, .5);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .landing__brandbox__title{
+      font-family: 'Major Mono Display', monospace;
+      font-size: 3em;
+      margin: .5em .25px;
+    }
+
+    .landing__brandbox__descriptor{
+      font-size: 2.25em;
+      font-weight: 300;
     }
   }
 
-  .landing_brand{
-    font-size: 4rem;
-    margin: .5em 0px;
+  .landing__navbox{
+    width: 75%;
+    height: 100%;
+    font-family: 'Iceberg', sans-serif;
+    z-index: 1;
+    // padding: 2em;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
   }
 
-  .landing_nav{
-    width: 100%;
+  .landing__navbox--left{
+    justify-content: flex-start;
+    left: 0;
+    background: url("/icons/landing__backgroundshape--left.svg") no-repeat;
+    background-size: cover;
+    background-position: top;
+  }
+  .landing__navbox--right{
+    justify-content: flex-end;
+    right: 0;
+    background: url("/icons/landing__backgroundshape--right.svg") no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
+  .landing__navbox__link{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
     align-items: center;
-    .landing_nav_navs--textlink{
-      text-decoration: none;
-      font-size: 1.5rem;
-      padding: .5em;
-      color: black;
-      border-radius: 3px;
-      &:hover, &:focus{
-        font-weight: bold;
-        // background-color: rgba(253, 215, 53, .5);
-        cursor: pointer;
-      }
+    padding: 1em;
+    user-select: none;
+    &:hover{
+      cursor: pointer;
     }
 
+    .landing__navbox__link__img{
+      width: 40px;
+      height: 40px;
+      background: url("/icons/landing__leftarrow.svg") no-repeat center;
+      background-size: 40px 40px;
+      padding: 10px;
+    }
+    .landing__navbox__link__h1{
+      font-size: 2.25em;
+    }
+    #rightarrow{
+      transform: scaleX(-1);
+    }
   }
+  //
+  //   .landing__navbox__link--box{
+  //     padding: 2em;
+  //     display: flex;
+  //     justify-content: flex-start;
+  //     align-items: center;
+  //     height: 100%;
+  //     width: 25%;
+  //     position: fixed;
+  //     top: 0;
+  //   }
+  //   .landing__navbox__link--box--left{
+  //     left: 0;
+  //     text-align: left;
+  //   }
+  //   .landing__navbox__link--box--right{
+  //     right: 0;
+  //     text-align: right;
+  //     // background-color: #eeeeee;
+  //   }
+  //   .landing__navbox__link--triangle{
+  //     height: 0;
+  //     position: relative;
+  //     top: 0;
+  //   }
+  //   .landing__navbox__link--triangle--left{
+  //     border-top: 1000px solid #f57f17;
+  //     border-right: 1000px solid transparent;
+  //   }
+  //   .landing__navbox__link--triangle--right{
+  //     border-bottom: 1000px solid #fdd835;
+  //     border-left: 1000px solid transparent;
+  //     right: 0;
+  //   }
+  // }
+  //
+  // .landing__navbox--left{
+  //   left: 0;
+  // }
+  // .landing__navbox--right{
+  //   right: 0;
+  // }
 }
 
 @media only screen
@@ -70,11 +151,4 @@ only screen
   and (max-device-width : 736px)
   and (orientation : portrait) {
 
-  .landing .landing_brand{
-    font-size: 3em;
-  }
-
-  .landing .landing_nav .landing_nav_navs--textlink{
-    font-size: 1.25em;
-  }
 }

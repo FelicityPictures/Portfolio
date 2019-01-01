@@ -1,13 +1,22 @@
 <% provide(:title, '') %>
 <body class="landing">
   <%= javascript_include_tag 'home', 'data-turbolinks-track': 'reload' %>
-  <div id="nav-image"></div>
-  <h1 id="landing_brand" class="landing_brand">Felicity Ng</h1>
-  <nav class="landing_nav">
-    <a href="/about" id="nav0" class="landing_nav_navs--textlink">About</a>
-    <a href="/user_experience" id="nav1" class="landing_nav_navs--textlink">UX/UI Work</a>
-    <a href="/graphic_design" id="nav2" class="landing_nav_navs--textlink">Graphic Design</a>
-    <a href="/computer_science" id="nav3" class="landing_nav_navs--textlink">CS Projects</a>
-    <a href="/resume" id="nav4" class="landing_nav_navs--textlink">Resume</a>
-  </nav>
+
+  <div class="landing__brandbox">
+    <h1 class="landing__brandbox__title">Felicity Ng</h1>
+    <p class="landing__brandbox__descriptor">UX. UI. Designer.</p>
+  </div>
+
+  <div class="landing__navbox landing__navbox--left">
+    <div class="landing__navbox__link">
+      <div class="landing__navbox__link__img" id="leftarrow"></div>
+      <h1 class="landing__navbox__link__h1">About</h1>
+    </div>
+  </div>
+  <div class="landing__navbox landing__navbox--right">
+    <div class="landing__navbox__link">
+      <h1 class="landing__navbox__link__h1">Projects</h1>
+      <div class="landing__navbox__link__img" id="rightarrow"></div>
+    </div>
+  </div>
 </body>
