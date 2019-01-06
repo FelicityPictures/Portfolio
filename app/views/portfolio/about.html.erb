@@ -1,10 +1,9 @@
 <body>
   <%= render 'layouts/navbar' %>
 
-  <main class="main main_Info">
-    <img id="felicitypicture" src="felicity.jpg" alt="picture of Felicity"></img>
+  <main class="main">
+    <img class="main__info__img" src="felicity.jpg" alt="picture of Felicity"></img>
     <p class="main_Info--paragraphText">
-      <br/>
       <b>Hello! I’m Felicity…</b>
       <br/>
       <br/>
@@ -17,6 +16,12 @@
       But for now, back to the drawing board... and crying over adorable videos of cats :’)
     </p>
   </main>
+
+  <!-- <aside>
+    Click here to view my projects!
+  </aside> -->
+
+  <%= render 'layouts/footer' %>
 
   <%= javascript_include_tag 'nav', 'data-turbolinks-track': 'reload' %>
 </body>

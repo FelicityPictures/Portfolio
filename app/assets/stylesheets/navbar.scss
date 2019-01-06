@@ -1,0 +1,51 @@
+$orange: #f57f17;
+$yellow: #fdd835;
+
+header{
+  width: 100%;
+  // position: fixed;
+  // top: 0px;
+  // left: 0px;
+}
+
+.navbar{
+  width: 100%;
+  // border: solid 1px black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.navbar__link{
+}
+
+.navbar__link--pagename{
+  font-family: 'Iceberg', sans-serif;
+  // margin-right: 30px;
+}
+
+.navbar__link--home{
+  font-family: 'Major Mono Display', monospace;
+  font-size: 2.25em;
+}
+
+.navbar__link--icon{
+  width: 0;
+  height: 0;
+  margin-top: -26px;
+  margin-left: -30px;
+}
+
+.navbar__link--icon--about{
+  border-top: 50px solid $orange;
+  border-right: 50px solid transparent;
+}
+
+.navbar__link--icon--projects{
+  border-bottom: 50px solid $yellow;
+  border-left: 50px solid transparent;
+}

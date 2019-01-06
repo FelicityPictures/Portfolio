@@ -42,213 +42,143 @@ body{
   border: 1px solid black;
 }
 
-header{
-  width: 100%;
-  position: fixed;
-  top: 0px;
-  left: 0px;
+// .main{
+//   margin: 5em 3em;
+// }
 
-  .navbar_button{
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    border: none;
-    background-size: 40px;
-    background-position: center;
-  }
-
-  #hamburgerbutton{
-    background: url("/icons/hamburger.svg") no-repeat;
-    display: none;
-  }
-
-  .navbar{
-    width: 100%;
-    border-bottom: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-
-    #closeNavbarButton{
-      background: url("/icons/exit.svg") no-repeat;
-      display: none;
-    }
-
-    .navbar_navs{
-      width: 90%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: center;
-
-      #navbar-brand{
-        font-size: 2rem;
-        padding: 0.5rem;
-      }
-
-      .navbar_navs--textlink{
-        text-decoration: none;
-        font-size: 1rem;
-        padding: 0.5rem;
-        color: black;
-        cursor: pointer;
-        border-radius: 3px;
-
-        &:hover, &:focus{
-          background-color: rgba(253, 215, 53, .5);
-        }
-
-        &:nth-child(1){
-          &:hover, &:focus{
-            background-color: white;
-          }
-        }
-      }
-    }
-  }
-}
-
-.main{
-  margin: 5em 3em;
-}
-
-.main_Info{
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-
-  img{
-    width: 100%;
-    height: auto;
-  }
-
-  .main_Info_h1{
-    margin: .75em;
-  }
-
-  .main_Info--paragraphText{
-    padding-bottom: 2rem;
-  }
-
-  .main_Info--link{
-    color: #f57f17;
-    text-decoration: underline;
-  }
-
-  .main_Info_video{
-    border: 2px #f57f17 solid;
-    border-radius: 5px;
-    padding: .5em 1em;
-    width: 90%;
-
-    video{
-      width: 100%;
-    }
-
-    #controls{
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .main_Info_video_Button{
-      border: 0px;
-      padding: .25em 1em;
-      color: transparent;
-      width: 15%;
-      box-sizing: border-box;
-      }
-
-      button[title="play"]{
-        background: url("/icons/play.svg") no-repeat;
-        background-size: 10px;
-        background-position: center;
-      }
-
-      button[title="pause"]{
-        background: url("/icons/pause.svg") no-repeat;
-        background-size: 10px;
-        background-position: center;
-      }
-
-      progress{
-        width: 65%;
-      }
-      progress[value]{
-        -webkit-appearance: none;
-
-        &::-webkit-progress-bar{
-          background-color: #3b4552;
-          border-radius: 2px;
-        }
-
-        &::-webkit-progress-value {
-          background-image:
-        	   -webkit-linear-gradient(top,
-        	                           rgba(255, 255, 255, .25),
-        	                           rgba(0, 0, 0, .25)),
-        	   -webkit-linear-gradient(left, #f57f17, #fdd835);
-
-            border-radius: 2px;
-            background-size: 35px 20px, 100% 100%, 100% 100%;
-        }
-      }
-
-      .main_Info_video_volumeControls{
-        padding-left: 1em;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        #muteButton{
-          padding: 0px .25em;
-        }
-        input[type="range"]{
-          -webkit-appearance: none;
-          width: 75%;
-          &::-webkit-slider-thumb{
-            -webkit-appearance: none;
-            cursor: pointer;
-            height: 20px;
-            width: 20px;
-            border-radius: 20px;
-            color: #f57f17;
-            background: #f57f17;
-            margin-top: -8.5px;
-          }
-          &::-webkit-slider-runnable-track {
-            cursor: pointer;
-            width: 100%;
-            height: 5px;
-            background: white;
-            border-radius: 2px;
-            border: 1px solid #fdd835;
-          }
-        }
-
-        button[title="mute"]{
-          background: url("/icons/unmuted.svg") no-repeat;
-          background-size: 20px;
-          background-position: center;
-        }
-
-        button[title="unmute"]{
-          background: url("/icons/muted.svg") no-repeat;
-          background-size: 20px;
-          background-position: center;
-        }
-      }
-
-    }
-  }
-
-}
+// .main_Info{
+//   width: 50%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-start;
+//   align-items: center;
+//
+//   img{
+//     width: 100%;
+//     height: auto;
+//   }
+//
+//   .main_Info_h1{
+//     margin: .75em;
+//   }
+//
+//   .main_Info--paragraphText{
+//     padding-bottom: 2rem;
+//   }
+//
+//   .main_Info--link{
+//     color: #f57f17;
+//     text-decoration: underline;
+//   }
+//
+//   .main_Info_video{
+//     border: 2px #f57f17 solid;
+//     border-radius: 5px;
+//     padding: .5em 1em;
+//     width: 90%;
+//
+//     video{
+//       width: 100%;
+//     }
+//
+//     #controls{
+//       width: 100%;
+//       display: flex;
+//       justify-content: space-between;
+//       align-items: center;
+//
+//       .main_Info_video_Button{
+//       border: 0px;
+//       padding: .25em 1em;
+//       color: transparent;
+//       width: 15%;
+//       box-sizing: border-box;
+//       }
+//
+//       button[title="play"]{
+//         background: url("/icons/play.svg") no-repeat;
+//         background-size: 10px;
+//         background-position: center;
+//       }
+//
+//       button[title="pause"]{
+//         background: url("/icons/pause.svg") no-repeat;
+//         background-size: 10px;
+//         background-position: center;
+//       }
+//
+//       progress{
+//         width: 65%;
+//       }
+//       progress[value]{
+//         -webkit-appearance: none;
+//
+//         &::-webkit-progress-bar{
+//           background-color: #3b4552;
+//           border-radius: 2px;
+//         }
+//
+//         &::-webkit-progress-value {
+//           background-image:
+//         	   -webkit-linear-gradient(top,
+//         	                           rgba(255, 255, 255, .25),
+//         	                           rgba(0, 0, 0, .25)),
+//         	   -webkit-linear-gradient(left, #f57f17, #fdd835);
+//
+//             border-radius: 2px;
+//             background-size: 35px 20px, 100% 100%, 100% 100%;
+//         }
+//       }
+//
+//       .main_Info_video_volumeControls{
+//         padding-left: 1em;
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+//
+//         #muteButton{
+//           padding: 0px .25em;
+//         }
+//         input[type="range"]{
+//           -webkit-appearance: none;
+//           width: 75%;
+//           &::-webkit-slider-thumb{
+//             -webkit-appearance: none;
+//             cursor: pointer;
+//             height: 20px;
+//             width: 20px;
+//             border-radius: 20px;
+//             color: #f57f17;
+//             background: #f57f17;
+//             margin-top: -8.5px;
+//           }
+//           &::-webkit-slider-runnable-track {
+//             cursor: pointer;
+//             width: 100%;
+//             height: 5px;
+//             background: white;
+//             border-radius: 2px;
+//             border: 1px solid #fdd835;
+//           }
+//         }
+//
+//         button[title="mute"]{
+//           background: url("/icons/unmuted.svg") no-repeat;
+//           background-size: 20px;
+//           background-position: center;
+//         }
+//
+//         button[title="unmute"]{
+//           background: url("/icons/muted.svg") no-repeat;
+//           background-size: 20px;
+//           background-position: center;
+//         }
+//       }
+//
+//     }
+//   }
+//
+// }
 
 .main_display{
   width: 90%;
