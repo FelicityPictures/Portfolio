@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Iceberg|Major+Mono+Display|Source+Sans+Pro:300,400,600');
+
+.main{
+  margin: 1em 0em 5em 0em;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.main__about{
+}
+
+.main__about__img{
+  width: 100%;
+  height: auto;
+}

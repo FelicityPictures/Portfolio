@@ -180,39 +180,39 @@ body{
 //
 // }
 
-.main_display{
-  width: 90%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-
-  .main_display_projectBox{
-    display: block;
-    border-radius: 5px;
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 2rem 1rem;
-    margin: 2rem 1rem;
-    margin-top: 0px;
-
-    &:hover, &:focus{
-      background-color: #eeeeee;
-      cursor: pointer;
-    }
-  }
-
-  .main_display_csproject{
-    background-color: rgba(50,205,50, 0.4);
-    &:hover, &:focus{
-      background-color: rgba(50,205,50, 0.7);
-    }
-  }
-}
+// .main_display{
+//   width: 90%;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-around;
+//   align-items: center;
+//   flex-wrap: wrap;
+//
+//   .main_display_projectBox{
+//     display: block;
+//     border-radius: 5px;
+//     width: 25%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: flex-start;
+//     align-items: center;
+//     padding: 2rem 1rem;
+//     margin: 2rem 1rem;
+//     margin-top: 0px;
+//
+//     &:hover, &:focus{
+//       background-color: #eeeeee;
+//       cursor: pointer;
+//     }
+//   }
+//
+//   .main_display_csproject{
+//     background-color: rgba(50,205,50, 0.4);
+//     &:hover, &:focus{
+//       background-color: rgba(50,205,50, 0.7);
+//     }
+//   }
+// }
 
 .cstheme{
   background-color: black;
