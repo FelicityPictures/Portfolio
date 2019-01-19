@@ -25,12 +25,14 @@ header{
 
 .navbar__link--pagename{
   font-family: 'Iceberg', sans-serif;
+  text-decoration: none;
   // margin-right: 30px;
 }
 
 .navbar__link--home{
   font-family: 'Major Mono Display', monospace;
   font-size: 2.25em;
+  text-decoration: none;
 }
 
 .navbar__link--icon{
@@ -40,12 +42,12 @@ header{
   margin-left: -30px;
 }
 
-.navbar__link--icon--about{
+#About{
   border-top: 50px solid $orange;
   border-right: 50px solid transparent;
 }
 
-.navbar__link--icon--projects{
+#Projects{
   border-bottom: 50px solid $yellow;
   border-left: 50px solid transparent;
 }

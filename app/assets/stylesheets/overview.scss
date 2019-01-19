@@ -8,15 +8,23 @@ $yellow: #fdd835;
   box-sizing: border-box;
   height: 50px;
   width: 100%;
+  padding: 0px 20px;
   list-style: none;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  background-color: $yellow;
 }
 
 .main__overview__tabs--tab{
-  padding: 10px 40px;
+  padding: 10px 20px;
+  margin: 0px 20px 0px 0px;
+
+  &:hover{
+    background-color: rgba(255,255,255,.5);
+    cursor: pointer;
+  }
 }
 
 .main__overview__projects--container{
@@ -41,6 +49,9 @@ $yellow: #fdd835;
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .main__overview__projects--project--img{
@@ -61,10 +72,18 @@ $yellow: #fdd835;
   }
 }
 
-.main__overview__projects--project--info__tags__container{
+.projectinfotags{
   display: flex;
   justify-content: flex-start;
   list-style: none;
+
+  &--overview{
+
+  }
+
+  &--details{
+    margin: 20px 0px 25px 0px;
+  }
 
   li{
     padding: 5px 10px;

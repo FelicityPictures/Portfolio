@@ -1,7 +1,7 @@
 <header>
   <nav id="navbar" class="navbar">
-    <a id="currentpage" class="navbar__link--icon navbar__link--icon--about"></a>
+    <a id=<%= @otherpage %> class="navbar__link--icon navbar__link--icon--about"></a>
     <a href="/" class="navbar__link--home">Felicity Ng</a>
-    <a id="otherpage" class="navbar__link--pagename">Projects</a>
+    <a id="otherpage" class="navbar__link--pagename" href="/<%= @otherpage %>"><%= @otherpage %></a>
   </nav>
 </header>
