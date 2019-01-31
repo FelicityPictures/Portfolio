@@ -1,6 +1,5 @@
 <% provide(:title, '') %>
 <body class="landing">
-  <%= javascript_include_tag 'home', 'data-turbolinks-track': 'reload' %>
 
   <div class="landing__brandbox">
     <h1 class="landing__brandbox__title">Felicity Ng</h1>
@@ -8,15 +7,17 @@
   </div>
 
   <div class="landing__navbox landing__navbox--left">
-    <div class="landing__navbox__link">
+    <div id="aboutButton" class="landing__navbox__link">
       <div class="landing__navbox__link__img" id="leftarrow"></div>
       <h1 class="landing__navbox__link__h1">About</h1>
     </div>
   </div>
   <div class="landing__navbox landing__navbox--right">
-    <div class="landing__navbox__link">
+    <div id="projectsButton" class="landing__navbox__link">
       <h1 class="landing__navbox__link__h1">Projects</h1>
       <div class="landing__navbox__link__img" id="rightarrow"></div>
     </div>
   </div>
+
+  <%= javascript_include_tag 'home', 'data-turbolinks-track': 'reload' %>
 </body>
