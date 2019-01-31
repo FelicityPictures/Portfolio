@@ -11,7 +11,7 @@
 
     <ul class="main__overview__projects--container">
 
-      <li class="main__overview__projects--project">
+      <li id="cpacsButton" class="main__overview__projects--project">
         <img src="projects/CPACS/Logo.png" class="main__overview__projects--project--img"></img>
         <div class="main__overview__projects--project--info__container">
           <h1>CPACSweb Navigation</h1>
@@ -23,7 +23,7 @@
         </div>
       </li>
 
-      <li class="main__overview__projects--project">
+      <!-- <li class="main__overview__projects--project">
         <img src="projects/CPACS/Logo.png" class="main__overview__projects--project--img"></img>
         <div class="main__overview__projects--project--info__container">
           <h1>Sous</h1>
@@ -45,10 +45,12 @@
             <li>Graphic Design</li>
           </ul>
         </div>
-      </li>
+      </li> -->
 
     </ul>
   </main>
+
+  <%= javascript_include_tag 'projects', 'data-turbolinks-track': 'reload' %>
 
   <%= render 'layouts/footer' %>
 

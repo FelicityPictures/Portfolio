@@ -1,3 +1,17 @@
+let origin = 0;
+window.onscroll = function(e){
+  if(document.body.getBoundingClientRect().top - origin < -75){
+    console.log("hide");
+    origin = document.body.getBoundingClientRect().top;
+
+  }else if(document.body.getBoundingClientRect().top - origin > 75){
+    console.log("show");
+    origin = document.body.getBoundingClientRect().top;
+  }
+};
+
+
+
 // let navbar = document.querySelector("#navbar");
 // let hamburgerbutton = document.querySelector("#hamburgerbutton");
 // let exitbutton = document.querySelector("#closeNavbarButton");
